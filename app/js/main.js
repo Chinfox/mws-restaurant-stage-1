@@ -188,10 +188,15 @@ const fillRestaurantsHTML = (restaurants = self.restaurants) => {
 const createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
 
+  // Restaurant list container
+  const listContainer = document.createElement('div');
+  listContainer.className = 'list-container';
+  li.appendChild(listContainer);
+
   // create picture element
   const imgDiv = document.createElement('div');
   imgDiv.className = 'img-container';
-  li.appendChild(imgDiv);
+  listContainer.appendChild(imgDiv);
   
   const picture = document.createElement('picture');
   imgDiv.appendChild(picture);
@@ -244,6 +249,7 @@ const createRestaurantHTML = (restaurant) => {
   });
   imgDiv.appendChild(fav);
 
+  // Restaurant info container
   const div2 = document.createElement('div');
   div2.className = 'restaurant-info';
 
@@ -259,7 +265,7 @@ const createRestaurantHTML = (restaurant) => {
   address.innerHTML = restaurant.address;
   div2.appendChild(address);
   
-  li.appendChild(div2);
+  listContainer.appendChild(div2);
 
   const more = document.createElement('button');
   more.innerHTML = 'View Details';
@@ -267,7 +273,7 @@ const createRestaurantHTML = (restaurant) => {
   more.setAttribute('aria-label', 'click to view details of ' + restaurant.name + ' Restaurant');
   //more.href = DBHelper.urlForRestaurant(restaurant);
   more.addEventListener('click', () => { window.location.href = DBHelper.urlForRestaurant(restaurant); });
-  li.appendChild(more)
+  listContainer.appendChild(more)
 
   return li
 }

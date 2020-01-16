@@ -18,7 +18,7 @@ th,
 p {
 	font: 16px/1.6 Arial, Helvetica, sans-serif;
   color: #000;
-  line-height: 1.5;
+  /* line-height: 1.5; */
 }
 
 body {
@@ -230,12 +230,22 @@ nav h1 a {
   flex-wrap: wrap;
 }
 
-#restaurants-list li {
+/* #restaurants-list li {
   background-color: #fff;
   border: 2px solid #004;
   border-radius: 4em;
   margin: 1em;
   padding: 1em;
+  box-shadow: inset 0px 0px 0.5em 0.1em;
+} */
+
+.list-container {
+  background-color: #fff;
+  /* border: 2px solid #004; */
+  border-radius: 4em;
+  margin: 1em;
+  padding: 1em;
+  box-shadow: inset 0px 0px 0.5em 0.1em;
 }
 
 .img-container {
@@ -251,23 +261,30 @@ nav h1 a {
   max-width: 100%;
 }
 
+.restaurant-info {
+  background-color: #eee;
+  /* margin: 1em 0; */
+  padding: 0.5em;
+}
+
+.restaurant-info h3 {
+  color: #004;
+  font-size: 1.3em;
+  font-weight: 200;
+  /* margin: 20px 0 10px; */
+  text-transform: uppercase;
+}
+/* 
 #restaurants-list li h3 {
   color: #004;
   font-size: 1.3em;
   font-weight: 200;
   margin: 20px 0 10px;
   text-transform: uppercase;
-}
+} */
 
-.restaurant-info {
-  background-color: #ddd;
-  padding: 0 0.5em;
-}
-
-.restaurants-list p {
-  margin: 5px 0;
+.restaurant-info p {
   font-size: 1.2em;
-  line-height: 1.2;
 }
 
 .view-button {
